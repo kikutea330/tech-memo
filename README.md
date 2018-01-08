@@ -6,4 +6,4 @@ tech-memo
 ## リンク
 
 ### Linux関連
-- [SSH](/linux/ssh.md)
+- [Linux/SSH](/linux/ssh.md)
