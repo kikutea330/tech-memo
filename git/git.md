@@ -100,3 +100,17 @@ $ git config --global core.editor エディタ
 ```
 $ git config --global commit.template path/to/template_file.txt
 ```
+
+## Git hooks
+### リポジトリ更新時に同サーバ内の別リポジトリを更新
+Webサイト用のリモートbareリポジトリにpushした際に、公開ディレクトリのサイト資源を更新するときに使える。
+1. リモートbareリポジトリのpost-update.sampleをコピーしてpost-updateを作成
+  ```
+  $ cd path/to/remote_repository.git/hooks
+  $ cp ./post-update.sample ./post-update
+  ```
+2.  post-updateを編集して以下の内容を追記
+  ```sh:post-update
+  cd path/to/public_dir/repository
+  git --git-dir=.git pull
+  ```
