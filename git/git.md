@@ -114,3 +114,47 @@ Webサイト用のリモートbareリポジトリにpushした際に、公開デ
   cd path/to/public_dir/repository
   git --git-dir=.git pull
   ```
+
+## 既存ディレクトリをリモートリポジトリにプッシュ
+GitHubにプロジェクト作って、そこに既存プロジェクトを登録したいときに使える。
+1. リモートリポジトリ作成
+2. 既存プロジェクトディレクトリをリポジトリ化
+  ```
+  $ cd path/to/project_dir
+  $ git init
+  ```
+3. プロジェクトリポジトリのリモートリポジトリ登録
+  ```
+  $ git remote add origin repository_url
+  ```
+4. リモートリポジトリのインデックス情報取得
+  ```
+  $ git fetch
+  ```
+5. リモートリポジトリのブランチ確認
+  ```
+  $ git branch -a
+    remotes/origin/master
+  ```
+6. リモートのmasterをローカルにマージ
+  ```
+  $ git merge origin/master
+  ```
+7. ローカルにmasterブランチが作成されたことを確認
+  ```
+  $ git branch -a
+  * master
+    remotes/origin/master
+  ```
+8. プロジェクトディレクトリ以下のファイルを追加（事前に.gitigunoreを書いておく）
+  ```
+  $ git add .
+  ```
+9. コミット
+  ```
+  $ git commit -a
+  ```
+10. リモートリポジトリにコミットを反映
+  ```
+  $ git push origin master
+```
