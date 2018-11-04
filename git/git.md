@@ -105,6 +105,12 @@ $ git stash
 $ git stash pop
 ```
 
+### リモートリポジトリのURL設定
+originのURL変更
+```
+$ git remote set-url origin リモートリポジトリURL
+```
+
 ## Git設定
 ### ユーザ名とメールアドレスの登録
 ```
